@@ -3,8 +3,9 @@
     ./direnv.nix
     ./fzf.nix
     ./git.nix
-    ./zsh.nix
+    ./vim.nix
     ./vscode.nix
+    ./zsh.nix
   ];
 
   home.stateVersion = "24.05";
