@@ -25,9 +25,24 @@
   nixpkgs.config.allowUnfree = true;
 
   security.pam.services.sudo_local.touchIdAuth = true;
+  security.pam.services.sudo_local.reattach = true;
+
+  fonts.packages = [
+    pkgs.nerd-fonts.jetbrains-mono
+  ];
 
   system.defaults = {
     dock.autohide = true;
+    CustomUserPreferences = {
+      "com.apple.symbolichotkeys" = {
+        AppleSymbolicHotKeys = {
+          # Ctrl+Left: Move left a space
+          "79" = { enabled = false; };
+          # Ctrl+Right: Move right a space
+          "81" = { enabled = false; };
+        };
+      };
+    };
   };
 
   # Home Manager configuration

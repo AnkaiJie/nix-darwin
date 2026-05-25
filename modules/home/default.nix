@@ -3,6 +3,9 @@
     ./direnv.nix
     ./fzf.nix
     ./git.nix
+    ./neovim.nix
+    ./python.nix
+    ./tmux.nix
     ./vim.nix
     ./vscode.nix
     ./zsh.nix
