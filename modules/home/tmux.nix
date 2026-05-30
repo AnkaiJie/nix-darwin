@@ -6,7 +6,7 @@
     terminal = "screen-256color";
     prefix = "C-e";
     extraConfig = ''
-      bind \ split-window -h
+      bind \\ split-window -h
       bind - split-window -v
     '';
   };
