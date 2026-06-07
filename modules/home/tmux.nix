@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   programs.tmux = {
     enable = true;
     mouse = true;
@@ -6,6 +6,17 @@
     terminal = "screen-256color";
     prefix = "C-e";
     keyMode = "vi";
+    plugins = with pkgs.tmuxPlugins; [
+      {
+        plugin = dracula;
+        extraConfig = ''
+          set -g @dracula-show-powerline true
+          set -g @dracula-plugins "cpu-usage ram-usage time"
+          set -g @dracula-show-left-icon session
+          set -g @dracula-refresh-rate 5
+        '';
+      }
+    ];
     extraConfig = ''
       bind \\ split-window -h
       bind - split-window -v
